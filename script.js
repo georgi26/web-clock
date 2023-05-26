@@ -11,13 +11,39 @@ class Clock{
     }
 
     refresh(){
-        let time = new Date()
-        let secondsRotation = ((time.getSeconds()+(time.getMilliseconds()/1000)))*(DEGREE_PER_SECONDS)
-        this.secondsElement.style.setProperty("--rotation",secondsRotation)
-        let minutesRotation = (time.getMinutes()+time.getSeconds()/60)*DEGREE_PER_SECONDS
-        this.minutesElement.style.setProperty("--rotation",minutesRotation)
-        let hoursRotation = (time.getHours()+time.getMinutes()/60)* DEGREE_PER_HOUR
-        this.hoursElement.style.setProperty("--rotation",hoursRotation)
+        let time = new ClockTime()
+        this.secondsElement.style.setProperty("--rotation",time.getClockDegreeSeconds())
+        this.minutesElement.style.setProperty("--rotation",time.getClockDegreeMinutes())
+        this.hoursElement.style.setProperty("--rotation",time.getClockDegreeHours())
+    }
+}
+
+class ClockTime{
+    constructor(){
+        this.time = new Date()
+    }
+    getSeconds(){
+        return this.time.getSeconds()+(this.time.getMilliseconds()/1000)
+    }
+
+    getMinutes(){
+        return this.time.getMinutes()+(this.getSeconds()/60);
+    }
+
+    getHours(){
+        return this.time.getHours()+(this.getMinutes()/60);
+    }
+
+    getClockDegreeSeconds(){
+        return this.getSeconds() * DEGREE_PER_SECONDS
+    }
+
+    getClockDegreeMinutes(){
+        return this.getMinutes() * DEGREE_PER_SECONDS
+    }
+
+    getClockDegreeHours(){
+        return this.getHours() * DEGREE_PER_HOUR
     }
 }
 
