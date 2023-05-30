@@ -17,7 +17,7 @@ body {
     color: white;
     position: relative;
     border-radius: 50%;
-    background: linear-gradient(to top, rgba(99, 183, 240,0.7),rgba(49, 78, 37,0.7));
+    background: linear-gradient(to top, rgba(15, 90, 230, 0.7),rgba(67, 184, 230, 0.7));
     border: solid  rgb(248, 238, 238) 8px;
 }
 
@@ -34,26 +34,23 @@ body {
 
 .clock .hand.big {
     --rotation:30deg;
-    background-color: rgba(90, 64, 70,0.9);
+    background: linear-gradient(to top, rgba(10, 0, 150, 0.5),rgba(255, 255, 255, 0.4));
     width: 2%;
     height: 39%;
     z-index: 10;
     position: absolute;
-    border-top-left-radius: 30%;
-    border-top-right-radius: 30%;
-    border: solid white 3px
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 ;}
 
 .clock .hand.small {
     --rotation:120;
-    background-color: rgba(90, 64, 70,0.9);
+    background: linear-gradient(to top, rgba(10, 0, 150, 0.5),rgba(255, 255, 255, 0.4));
     width: 3%;
     height: 28%;
     z-index: 11;
-    border-top-left-radius: 40%;
-    border-top-right-radius: 40%;
-    border: solid white 4px
-
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .clock .hand.second {
